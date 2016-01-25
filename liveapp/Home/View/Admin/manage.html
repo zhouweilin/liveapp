@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<title>用户管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="/Public/css/global.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+
+*{margin: 0px;padding:0px;}
+
+	 th,td {
+ 		border: 1px #336666 solid;
+ 		
+ 	} 
+	table {
+		width: 100%;
+		text-align:center;
+		border:1px #336666 solid;
+		margin: 30px auto;
+		border-collapse:collapse;
+		font-size: 18px;
+	}
+	.world {
+		width: 100%;
+ 		margin: 0px auto;
+ 		height: auto;
+	}
+	.two {
+		margin: 0px auto;
+		width: 600px;
+		height: 700px;
+	}
+</style>
+</head>
+<body>
+<nav class="maker-nav fz">
+	<a href="/?c=admin">首页</a>
+	<b class="current">用户管理</b>
+	<button type="button" class="clearData">清除临时数据</button>
+</nav>
+<div class="world">
+<div class="create-wrap">
+<div class="two">
+ <table >
+    <tr>
+        <th>
+        	用户名:
+        </th>
+        <th>
+        	操作:
+        </th>
+    </tr>
+   
+	<foreach name="arrData4" item="vo">
+	    <tr>
+	        <td>
+	        	{$vo.username}
+	        </td>
+	        <td>
+	        	<!-- <a href="javascript:{$vo.id};" onclick="opentheWindow({$vo.id})">修改密码</a> -->
+ 					<!-- 我滴个神哪，这样的方式得不到ID怎么破 -->
+	        	<a href="?c=admin&a=modify&id={$vo.id}" target="_blank">修改密码</a>
+	        </td>
+	    </tr>
+	</foreach>		
+</table>
+</div>
+</div>
+</div>
+<!-- <script type="text/javascript">
+function opentheWindow ({$vo.id}) {
+	if(confirm('确定要修改么？')){
+	function open(){  
+  		var specs = "width=400,height=400,center=yes,toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no";  
+ 	 	//在窗口中打开的页面  
+  		var url = "?c=admin&a=modify&id=val";  
+     	window.open(url,"_blank",specs);    
+	} 
+		open();
+
+		}else{
+			return false;
+		} 
+}
+</script> -->
+</body>
+</html>

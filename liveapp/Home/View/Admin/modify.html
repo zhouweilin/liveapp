@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/Public/css/global.css" rel="stylesheet" type="text/css">
+<title>修改密码</title>
+<style type="text/css">
+	.world {
+		width: 100%;
+ 		margin: 0px auto;
+ 		height: auto;
+	}
+	.two {
+		margin: 0px auto;
+		width: 600px;
+		height: 700px;
+	}
+	table {
+		width: 100%;
+		text-align:center;
+		border:1px #336666 solid;
+		margin: 30px auto;
+		border-collapse:collapse;
+		font-size: 18px;
+	}
+	#pw,#pw2{
+		width: 200px;
+	}
+
+
+</style>
+
+
+</head>
+<body>
+<nav class="maker-nav fz">
+	<a href="/?c=admin">首页</a>
+	<b class="current">用户管理</b>
+	<b>修改密码</b>
+	<button type="button" class="clearData">清除临时数据</button>
+</nav>
+<div class="world">
+<div class="create-wrap">
+<div class="two">
+<table >
+<tr>
+<th scope="col">用户名</th>
+<td>{$arrData5[0].username}</td>
+</tr>
+<form action="/Home/Admin/modify" method="post" accept-charset="utf-8">
+<tr>
+<th scope="col">修改密码</th>
+<td><input type="password" id="pw" name="pw" value="" placeholder="请输入要修改的密码"/></td>
+</tr>
+<tr>
+<th scope="col">确认密码</th>
+<td><input type="password" id="pw2" name="pw2" value="" placeholder="再一次输入你要修改的密码"/></td>
+</tr>
+ <tr>
+     <td colspan="2" align="right">
+     <input type="hidden" name="id" value="{$arrData5[0].id}"/>
+     <input type="submit" value="修改" onclick="opentheWindow()"/>
+     </td>
+ </tr>
+</form>
+</table>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+function opentheWindow () {
+	var val1,val2;
+	val1 = document.getElementById("pw").value;
+	val2 = document.getElementById("pw2").value;
+	if (val1===val2) {
+		alert("真的要修改么？");
+	}else{
+		alert("你输入的密码不一致，请重新输入");
+	}
+}
+</script>
+</body>
+</html>

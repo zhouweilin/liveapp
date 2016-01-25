@@ -1,0 +1,170 @@
+@charset "utf-8";
+/* CSS Document */
+ul,li,dl,dt,dd,ol{ list-style-type:none; margin:0; padding:0;}
+h1,h2,h3,h4,h5,h6,form,input,textarea,label,table,tr,td,p,header,article,footer,nav,section,aside,menu{margin:0; padding:0;}
+header,article,footer,nav,section,aside,menu{ display:block;}
+table{ border-collapse:collapse; border-spacing:0;}
+img{ border:none;}
+a:link{color:#000;text-decoration:none;outline:none;}
+a:active,a:visited{color:#168dd9; text-decoration:none;}
+a:hover { color:#e05a63;}
+body{ margin:0;padding:0;font:14px/22px Microsoft Yahei;/* font-size:1em; line-height:1.571em;*/ min-width:320px;}
+.fl{ float:left;}
+.fr{ float:right;}
+.cl{ clear:both; font-size:0; line-height:0; height:0; width:100%; overflow:hidden;}
+.fix:after {visibility: hidden;display: block;font-size: 0;content:""; clear: both; height: 0;}
+.fix{*zoom:1;}
+.bg{ background:#F5F5F5;}
+/**============ Reset End ===============**/
+.navbar{background:#339ee2;}
+.navbar .ico-home,.navbar .ico-nav{float:left;width:20%;height:100px;overflow:hidden;text-indent:-9999em;background:url(http://m.boai.com/images/ico-home.png) center center no-repeat;}
+.navbar .ico-nav{float:right;background:url(http://m.boai.com/images/ico-nav.png) center center no-repeat;}
+.navbar #title{float:left;width:58%;height:100px;margin:0 1%;font-size:3.142em;font-weight:normal;color:#fff;line-height:100px;text-align:center;overflow:hidden;-webkit-transition:font-size 0.2s ease-out; -o-transition:font-size 0.2s ease-out; -moz-transition:font-size 0.2s ease-out;transition:font-size 0.2s ease-out;}
+.header .description{height:58px;font-size:1.7em;font-weight:normal;line-height:58px;text-align:center;-webkit-transition:font-size 0.2s ease-out;-moz-transition:font-size 0.2s ease-out; -o-transition:font-size 0.2s ease-out; transition:font-size 0.2s ease-out;}
+.header .description span{padding:2px 5px;overflow:hidden;color:#ffea00;font-weight:bold;background:#339ee2;border-radius:1em;}
+/**============= 通用标题 =========**/
+.index-hd{height:68px;line-height:68px;padding:18px 20px 0 70px;border-bottom:3px solid #339ee2;background:url(http://m.boai.com/images/ico-tt.png) 20px 38px no-repeat;}
+.index-hd .more{float:right;font-size:24px;}
+.index-hd h3{display:inline;font-size:32px;font-weight:normal;}
+.index-hd strong{color:#cbcbcb;font-size:24px;font-weight:normal;text-transform:uppercase;}
+.links{margin-top:30px;}
+.links h3{height:90px;padding:0 0 0 20px;line-height:90px;background:#339EE2;font-size:28px;font-weight:normal;color:#fff;}
+.links .bd{padding:20px;}
+.links .bd a{margin:0 10px;font-size:24px;color:#666;}
+/**============底部=================**/
+.copyright{text-align:center;margin:1em 0;font-size:1em; line-height:1.6em;color:#999;}
+.copyright a{color:#999;}
+/*.footer{height:119px}*/
+.footer{ height:178px;}
+.footer-con{width:100%;/*height:118px;*/height:177px;position:fixed; z-index:100; right:0; bottom:0;-webkit-transition:right .5s ease;transition:right .5s ease;}
+.menu-bg{background: none repeat scroll 0 0 #339ee2;    border-top: 1px solid #4dbaff;}
+.footer p{max-width:600px;padding:10px 20px;margin:0 auto;}
+.footer .tx2{float:left;width:73%;height:40px;text-indent:10px;border:1px solid #4dbaff;outline:none;font:14px/40px arial; border-radius:5px 0 0 5px; overflow:hidden; box-shadow: inset 5px 2px 5px rgba(238,238,238,0.8);}
+.footer .ty2{float:right;width:25%;height:42px;border:1px solid #4dbaff;outline:none;font:15px/40px Microsoft Yahei;text-align:center;color:#fff;background:#339ee2;border-radius:0 5px 5px 0; overflow:hidden;}
+.footer li{ float:left; width:25%;}
+.footer li a,.footer li span{display:block;height:44px;padding:74px 0 0 0;text-align:center;font-size:24px;color:#fff;cursor:pointer;}
+.footer li.zx span{background:url(http://m.boai.com/images/ico-mess.png) center 15px no-repeat;}
+.footer li.tel a{background:url(http://m.boai.com/images/ico-tel2.png) center 15px no-repeat;}
+.footer li.yy a{background:url(http://m.boai.com/images/ico-yy.png) center 15px no-repeat;}
+.footer li.dh span{background:url(http://m.boai.com/images/ico-nav2.png) center 15px no-repeat;}
+/**==================弹出导航菜单==============**/
+#nav-over{position:fixed;left:0;top:0;z-index:9998;display:none;width:100%;height:100%;}
+.warmp{position:relative;right:0;z-index:1;-webkit-transition:all .5s ease;transition:all .5s ease;}
+.nav{position:fixed;top:0;right:-480px;z-index:9999;width:480px;height:100%;background:#393939;-webkit-transition:all .5s ease;transition:all .5s ease;}
+.openMenu{right:480px;-webkit-transition:all .5s ease;transition:all .5s ease;}
+.openNav{right:0;-webkit-transition:all .5s ease;transition:all .5s ease;}
+.nav h3{padding:65px 0 30px 25px;font-size:3.142em;font-weight:normal;color:#fff;line-height:50px;}
+.nav h3 a { color:#fff;}
+.scrollerBox{overflow-x:hidden;overflow-y:scroll;}
+.scroller {width:100%;padding:0 0 100px 0;}
+/**============= 科室菜单 ========================**/
+.nav ul li a{display:block;height:90px;overflow:hidden;padding:0 0 0 24px;line-height:90px;color:#dcdcdc;font-size:2em;border-bottom:1px solid #272727;}
+.home ul li span{ display:block;float:left;width:72px;height:90px;margin:0 1.2em 0 0;background:url(http://m.boai.com/images/nav.png);}
+.home ul li:nth-of-type(1) span{background-position:0 0;}
+.home ul li:nth-of-type(2) span{background-position:-72px 0;}
+.home ul li:nth-of-type(3) span{background-position:-144px 0;}
+.home ul li:nth-of-type(4) span{background-position:-216px 0;}
+.home ul li:nth-of-type(5) span{background-position:-288px 0;}
+.home ul li:nth-of-type(6) span{background-position:-360px 0;}
+.home ul li:nth-of-type(7) span{background-position:-432px 0;}
+.home ul li:nth-of-type(8) span{background-position:-504px 0;}
+.home ul li:nth-of-type(9) span{background-position:-576px 0;}
+.home ul li:nth-of-type(10) span{background-position:-648px 0;}
+.home ul li:nth-of-type(11) span{background-position:-720px 0;}
+.home ul li:nth-of-type(12) span{background-position:-792px 0;}
+.home ul li:nth-of-type(13) span{background-position:-864px 0;}
+.home ul li:nth-of-type(14) span{background-position:-932px 0;}
+/**================ 科室简介 =====================**/
+.i-news-about{padding:15px;max-height:495px; overflow:hidden;font-size:2em; line-height:1.8em;}
+.i-news-about .i-news-about-pic{ float:left; width:240px; border:2px solid  #efe5cf; margin:0 10px 0 0;}
+.i-news-about p { font-size:2em; line-height:1.8em;}
+.moreinfo { font-size:1.8em; text-align:right;}
+
+/**======================== 病种菜单 ==================**/
+/*.ks-nav dl{overflow:hidden;clear:both;padding:30px 50px;border-top:1px solid #454545;}
+.ks-nav dl dt{padding:0 0 30px 20px;font-size:2.5em;color:#fffc00; text-shadow:0 0 1px #000;}
+.ks-nav dl dt a{color:#fffc00;}
+.ks-nav dl dd{float:left;width:50%;}
+.ks-nav dl dd a{display:block;width:140px;margin:8px auto;padding:4px 8px;color:#000;font-size:1.5em;line-height:1.5em;text-align:center;background:#ffffff;border-radius:30px;box-shadow:0 0 10px #4b4b4b;}*/
+#gotop{display:none;position:fixed;z-index:777;width:82px;height:110px;right:10px;bottom:130px;background:url(http://m.boai.com/images/top.png) no-repeat;cursor:pointer;}
+.ks-nav dl{overflow:hidden;clear:both;padding:30px 50px;border-top:1px solid #454545;}
+.ks-nav dl dt{padding:0 0 30px 20px;font-size:2.5em;color:#fffc00; text-shadow:0 0 1px #000;}
+.ks-nav dl dt a{color:#fffc00;}
+.ks-nav dl dd{float:left;display:table;width:46%;height:70px;margin:2%;padding:0 2%;text-align:center;overflow:hidden;box-sizing:border-box;background:#ffffff;border-radius:4px;box-shadow:0 0 10px #4b4b4b;}
+.ks-nav dl dd a{display:table-cell;color:#000;vertical-align:middle;font-size:24px;line-height:24px;}
+
+/**===================科室专家====================**/
+.des p { height:88px; overflow:hidden;}
+@media screen and (max-width: 639px){
+	.navbar .ico-home,.navbar .ico-nav{height:50px;background-size:29.5px 24.5px;}
+	.navbar .ico-nav{background-size:24.5px 21.5px;}
+	.navbar #title{height:50px;font-size:1.571em;line-height:50px;}	
+	.header .description{height:29px;font-size:0.9em;line-height:29px;}	
+	.header .description span{padding:2px 5px;color:#ffea00;border-radius:1em;}	
+	
+	.index-hd{height:34px;line-height:34px;padding:9px 10px 0 35px;border-bottom:1px solid #339ee2;background:url(http://m.boai.com/images/ico-tt.png) 10px 19px no-repeat; background-size:14px 14px;}
+	.index-hd .more{float:right;font-size:12px;}
+	.index-hd h3{display:inline;font-size:16px;font-weight:normal;}
+	.index-hd strong{color:#cbcbcb;font-size:12px;font-weight:normal;text-transform:uppercase;}
+	
+	.links{margin-top:15px;}
+	.links h3{height:45px;padding:0 0 0 10px;line-height:45px;font-size:14px;}
+	.links .bd{padding:10px;}
+	.links .bd a{margin:0 5px;font-size:12px;}
+
+	.copyright{font-size:0.8em;}
+	/*.footer{height:60px}
+	.footer .footer-con{height:59px;}*/
+	.footer{ height:99px;}
+	.footer .footer-con{height:102px;}
+	.footer p{padding:5px 10px;margin:0 auto;}
+	.footer .tx2{height:30px;text-indent:5px;font:14px/30px arial;}
+	.footer .ty2{height:32px;font:15px/30px Microsoft Yahei;}
+	.footer li{ float:left; width:25%;}
+	.footer li a,.footer li span{height:22px;padding:37px 0 0 0;font-size:12px;line-height:18px;}
+	.footer li.zx span{background:url(http://m.boai.com/images/ico-mess.png) center 7px no-repeat;background-size:29px 24px;}
+	.footer li.tel a{background:url(http://m.boai.com/images/ico-tel2.png) center 7px no-repeat;background-size:26px 25px;}
+	.footer li.yy a{background:url(http://m.boai.com/images/ico-yy.png) center 7px no-repeat;background-size:22px 27px;}
+	.footer li.dh span{background:url(http://m.boai.com/images/ico-nav2.png) center 7px no-repeat;background-size:24px 21px;}
+	/**==================== 科室菜单 ===============**/	
+	.nav{width:240px;}
+	.nav h3{padding:32px 0 15px 12px;font-size:1.571em;font-weight:normal;color:#fff;line-height:25px;}	
+	.nav ul li{clear:both;}
+	.nav ul li a{display:block;height:45px;padding:0 0 0 12px;line-height:45px;font-size:1em;}
+	.home ul li span{width:36px;height:45px;background:url(http://m.boai.com/images/nav-320.png);}
+	.home ul li:nth-of-type(1) span{background-position:0 0;}
+	.home ul li:nth-of-type(2) span{background-position:-36px 0;}
+	.home ul li:nth-of-type(3) span{background-position:-72px 0;}
+	.home ul li:nth-of-type(4) span{background-position:-108px 0;}
+	.home ul li:nth-of-type(5) span{background-position:-144px 0;}
+	.home ul li:nth-of-type(6) span{background-position:-180px 0;}
+	.home ul li:nth-of-type(7) span{background-position:-216px 0;}
+	.home ul li:nth-of-type(8) span{background-position:-252px 0;}
+	.home ul li:nth-of-type(9) span{background-position:-288px 0;}
+	.home ul li:nth-of-type(10) span{background-position:-324px 0;}
+	.home ul li:nth-of-type(11) span{background-position:-360px 0;}
+	.home ul li:nth-of-type(12) span{background-position:-396px 0;}
+	.home ul li:nth-of-type(13) span{background-position:-432px 0;}	
+	/**================ 科室简介 =====================**/
+	.i-news-about { max-height:230px; line-height:22px; font-size:14px;}
+	.i-news-about .i-news-about-pic { width:160px;}
+	.i-news-about p { font-size:1em;}
+	.moreinfo { font-size:14px;}
+
+	/**==================== 病种菜单 ===============**/
+	/*.ks-nav dl{overflow:hidden;clear:both;padding:15px 25px;border-top:1px solid #454545;}
+	.ks-nav dl dt{padding:0 0 15px 10px;font-size:1.2em;color:#fffc00; text-shadow:0 0 1px #000;}
+	.ks-nav dl dd{float:left;width:50%;}
+	.ks-nav dl dd a{display:block;width:70px;margin:4px auto;padding:2px 4px;color:#000;font-size:1em;line-height:1.5em;text-align:center;background:#ffffff;border-radius:15px;}*/
+	.ks-nav dl{overflow:hidden;clear:both;padding:15px 25px;border-top:1px solid #454545;}
+	.ks-nav dl dt{padding:0 0 15px 5px;font-size:1.2em;color:#fffc00; text-shadow:0 0 1px #000;}
+	.ks-nav dl dd {height:40px;}
+	.ks-nav dl dd a{font-size:12px;line-height:15px;}
+	#gotop{width:41px;height:55px;right:0;bottom:95px;background-size:41px 55px;}	
+	
+	.nav{right:-240px}
+	.openMenu{right:240px;}
+	.openNav{right:0;}
+
+	
+}

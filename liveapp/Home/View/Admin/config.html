@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轻应用制作</title>
+	<link href="/Public/css/animate.css" rel="stylesheet" type="text/css">
+	<link href="/Public/css/editor.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="/Public/css/iconfont.css">
+</head>
+<body>
+<nav class="maker-nav fz">
+	<a href="/?c=admin">首页</a>
+	<b>></b>
+	<b>微杂志制作</b>
+	<div id="maker-newEle">
+		<a href="javascript:;" class="new-text" data-txt="请输入内容">文本</a>
+		<a href="javascript:;" class="new-img">图片</a>
+		<a href="javascript:;" class="new-pageBg">背景</a>
+		<a href="javascript:;" class="new-form-btn">表单</a>
+		<a href="javascript:;" class="new-music">音乐</a>
+		<ul class="new-form-opts">
+			<li data-opt="newInput">输入框</li>
+			<li data-opt="newBtn">提交按钮</li>
+			<li data-opt="newTel">联系电话</li>
+			<li data-opt="newLink">链接</li>
+		</ul>
+	</div>
+	<button type="button" class="preview">预览</button>
+	<button type="button" class="saveMag">保存</button>
+</nav>
+<div class="maker-config-wrapper">
+	<aside class="maker-pages-list">
+		<div class="maker-pages-thumb">
+			<ul>
+				<li draggable="true">
+					<div class="page-wrap">
+					</div>
+				</li>
+			</ul>
+		</div>
+		<a href="javascript:;" id="add" class="add">
+			<b>
+				<i></i>
+				<i></i>
+			</b>
+			增加一页
+		</a>
+	</aside>
+
+	<div class="maker-simulator-wrap">
+		<div class="maker-simulator">
+			<h1></h1>
+			<div class="maker-preview"></div>
+			<div class="maker-tools">
+				<span class="maker-tools-del"><b class="icon iconfont">&#xe639;</b><strong class="strongD">删除该页</strong></span>
+				<span class="maker-tools-levelUp"><b class="icon iconfont">&#xe601;</b><strong class="strongD">上移一层</strong></span>
+				<span class="maker-tools-levelDown"><b class="icon iconfont">&#xe602;</b><strong class="strongD">下移一层</strong></span>
+			</div>
+			<div class="mag-info-config">
+				<ul>
+					<li><label for="">分 &nbsp; 类：</label><select  data-info="group" data-notice="请选择所属医院"></select></li>
+					<li><label for="">作 &nbsp; 者：</label><input type="text" data-info="author" data-notice="请填写设计师"></li>
+					<li class="mag-music-config"><label for="">音 &nbsp; 乐：</label><span class="mag-music"><audio src="/Public/images/imgList/music/exciting/随它吧.mp3"></audio></span><i>随它吧</i></li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- 属性配置 -->
+	<aside class="maker-config-wrap">
+		<!-- ele是当前编辑对象时显示 -->
+		<section class="ele-config">
+			<div class="opts">
+				<span class="active">文本</span>
+				<span>动画</span>
+			</div>
+			<div class="tabs">
+				<div class="card active con-block">
+					<ul>
+						<li>
+							<div contenteditable="true" class="inputer" data-text="请输入内容">在此输入文本</div>
+						</li>
+						<li>
+							<dl class="conf-loc">
+								<dd>X ：<input class="locX num" type="text"> </dd>
+								<dd>Y ：<input class="locY num" type="text"></dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dd>文本背景 <input data-color="textBgColor" class="textBgColor" type="color" > <input class="rgb" type="text"></dd>
+					    	</dl>
+					    </li>
+						<li>
+							<dl class="conf-border">
+								<dd class="border-style">
+									<span>边框</span>
+				                    <select class="border-type" name="" id="border">
+				                        <option value="none">无</option>
+				                        <option value="solid">实线</option>
+				                        <option value="dashed">虚线</option>
+				                        <option value="dotted">点状</option>
+				                        <option value="double">双线</option>
+				                    </select>
+	                    			&nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; <input class="border-width num" type="text" value="1">px
+								</dd>
+								<dd class="border-color">
+									<input data-color="borderColor" class="borderColor" type="color" > <input class="rgb" type="text">
+								</dd>
+							</dl>
+						</li>
+
+						<li class="conf-text">
+								<dl class="conf-font">
+									<dd>字号 <input class="fontSize num" type="text" value="12"/>px</dd>
+									<dd>&nbsp;&nbsp;行高 <input class="lineHeight num" type="text"> px</dd>
+									<dd class="font-color"> <input data-color="color" class="color" type = "color" > <input class="rgb" type="text"></dd>
+								</dl>
+								<dl >
+									<dd class="conf-align">
+										<span data-align="left">左</span>
+										<span class="selected" data-align="center">中</span>
+										<span data-align="right">右</span>
+									</dd>
+									<dd class="conf-fontStyle">
+										<span data-style="bold" data-weight="bold">B</span>
+										<span data-style="underline" data-decoration="underline">U</span>
+										<span data-style="italic" data-em="italic">I</span>
+									</dd>
+								</dl>
+						</li>
+
+						<li>
+							<dl class="conf-slider">
+								<dd>透明度</dd>
+								<dd><span><i data-prop="opacity" data-maxval="100"></i></span></dd>
+								<dd><input class="num" type="text" value="100">%</dd>
+							</dl>
+							<dl class="conf-slider">
+								<dd>阴 &nbsp;&nbsp; 影</dd>
+								<dd><span><i data-prop="boxShadow" data-maxVal="100"></i></span></dd>
+								<dd><input class="num" type="text" value="0">px</dd>
+							</dl>
+							<dl class="conf-slider">
+								<dd>圆 &nbsp;&nbsp; 角</dd>
+								<dd><span><i data-prop="borderRadius" data-maxval="100"></i></span></dd>
+								<dd><input class="num" type="text" value="0">px</dd>
+							</dl>
+							<dl class="conf-slider">
+								<dd>旋 &nbsp;&nbsp; 转</dd>
+								<dd><span><i data-prop="transform" data-maxval="360"></i></span></dd>
+								<dd><input class="num" type="text" value="0">deg</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+				<div class="card conf-anim">
+					<ul>
+
+						<li>
+							<dl class="conf-anim-type">
+								<dd>
+									<span data-anim="normal">无</span>
+									<span data-anim="fadeInNormal">正常淡入</span>
+									<span data-anim="moveDown">向下移入</span>
+									<span data-anim="moveLeft">向左移入</span>
+									<span data-anim="moveUp">向上移入</span>
+									<span data-anim="moveRight">向右移入</span>
+									<span data-anim="flipInX">水平翻转进入</span>
+									<span data-anim="rotateIn">旋转进入</span>
+									<span data-anim="bounce">跳入</span>
+									<span data-anim="flash">闪动</span>
+									<span data-anim="pulse">循环缩放</span>
+									<span data-anim="rubberBand">弹动</span>
+									<span data-anim="shake">颤动</span>
+									<span data-anim="swing">摇晃</span>
+									<span data-anim="tada">颤抖</span>
+									<span data-anim="wobble">摇摆</span>
+									<span data-anim="zoomIn">放大</span>
+									<span data-anim="zoomInDown">向下放大</span>
+									<span data-anim="bigEntrance">弹性扩大</span>
+									<span data-anim="hatch">弹性向上</span>
+									<span data-anim="bounceIn">弹性放大</span>
+									<span data-anim="bounceInDown">向下弹性进入</span>
+									<span data-anim="bounceInLeft">向右弹性移入</span>
+									<span data-anim="bounceInRight">向左弹性进入</span>
+									<span data-anim="bounceInUp">向上弹性进入</span>
+									<span data-anim="fadeIn">淡入</span>
+									<span data-anim="slideExpandUp">向上放大</span>
+									<span data-anim="expandUp">放大</span>
+									<span data-anim="expandOpen">缩小</span>
+									<span data-anim="bigEntrance">向右晃动</span>
+									<span data-anim="hatch">向上晃动</span>
+			            			<span data-anim="bounce">弹跳</span>
+			            			<span data-anim="pulse">缩放</span>
+									<span data-anim="floating">浮动</span>
+			       				    <span data-anim="tossing">摇摆</span>
+			            			<span data-anim="pullUp">向上扩张</span>
+									<span data-anim="pullDown">向下扩张</span>
+			           				<span data-anim="stretchLeft">向左扩张</span>
+			          				<span data-anim="stretchRight">向右扩张</span>
+								</dd>
+							</dl>
+						</li>
+						<li><dl class="conf-anim-time">延时：<input  class="delay num"  type="text">s &nbsp;&nbsp;&nbsp;&nbsp; 持续时间：<input  class="duration num" type="text">s</dl></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- page是当前编辑对象时显示 -->
+		<section class="page-config active">
+			<div class="opts">
+				<span class="active">页面背景主题设置</span>
+			</div>
+			<div class="tabs">
+				<div class="card active">
+					<ul>
+						<li>
+							<div class="img-uploader">
+
+								<div class="img-box">
+
+								</div>
+								<div class="img-tool">
+									<span class="img-change"><b class="icon iconfont" style="z-index:0;">&#xe60b;</b><strong class="strontD">更换背景</strong><input title="更换背景" type="file" name="page"></span>
+								</div>
+							</div>
+						</li>
+						<li>
+							<dl class="bg-color">
+								<dd><span>纯色背景</span><input class="pageColor" type="color"><input class="rgb" type="text"></dd>
+							</dl>
+						</li>
+						<li></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- img是当前编辑对象时显示 -->
+		<section class="img-config">
+			<div class="opts">
+				<span class="active">图片</span>
+				<span>动画</span>
+			</div>
+			<div class="tabs">
+				<div class="card active">
+					<ul>
+						<li>
+							<div class="img-uploader">
+								<div class="img-box">
+								</div>
+								<div class="img-tool">
+									<span class="img-change"><b class="icon iconfont" style="z-index:0;">&#xe60b;</b><strong class="strontD">更换图片</strong><input name="img" title="更换图片" type="file"></span>
+								</div>
+							</div>
+						</li>
+						<li>
+							<dl class="conf-loc">
+								<dd>X ：<input class="locX num" type="text"> </dd>
+								<dd>Y ：<input class="locY num" type="text"></dd>
+							</dl>
+						</li>
+						<li>
+							<dl class="conf-border">
+								<dd class="border-style">
+									<span>边框</span>
+				                    <select class="border-type" name="" > <!-- id="border" --> 
+				                        <option value="none">无</option>
+				                        <option value="solid">实线</option>
+				                        <option value="dashed">虚线</option>
+				                        <option value="dotted">点状</option>
+				                        <option value="double">双线</option>
+				                    </select>
+	                    		    <input class="border-width1 num" type="text" value="1">px
+								</dd>
+								<dd class="border-color">
+									<input data-color="borderColor" class="borderColor borderColor1" type="color" > <input class="rgb" type="text">
+								</dd>
+							</dl>
+						</li>
+						<li>
+							<dl class="conf-slider">
+								<dd>透明度</dd>
+								<dd><span><i data-prop="opacity" data-maxval="100"></i></span></dd>
+								<dd><input class="num" type="text" value="100">%</dd>
+							</dl>
+							<dl class="conf-slider">
+								<dd>阴 &nbsp;&nbsp; 影</dd>
+								<dd><span><i data-prop="boxShadow" data-maxVal="100"></i></span></dd>
+								<dd><input class="num" type="text" value="0">px</dd>
+							</dl>
+							<dl class="conf-slider">
+								<dd>圆 &nbsp;&nbsp; 角</dd>
+								<dd><span><i data-prop="borderRadius" data-maxval="100"></i></span></dd>
+								<dd><input class="num" type="text" value="0">px</dd>
+							</dl>
+							<dl class="conf-slider">
+								<dd>旋 &nbsp;&nbsp; 转</dd>
+								<dd><span><i data-prop="transform" data-maxval="360"></i></span></dd>
+								<dd><input class="num" type="text" value="0">deg</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+				<div class="card conf-anim">
+					<ul>
+						<li>
+							<dl class="conf-anim-type">
+								<dd>
+									<span data-anim="normal">无</span>
+									<span data-anim="fadeInNormal">正常淡入</span>
+									<span data-anim="moveDown">向下移入</span>
+									<span data-anim="moveLeft">向左移入</span>
+									<span data-anim="moveUp">向上移入</span>
+									<span data-anim="moveRight">向右移入</span>
+									<span data-anim="flipInX">水平翻转进入</span>
+									<span data-anim="rotateIn">旋转进入</span>
+									<span data-anim="bounce">跳入</span>
+									<span data-anim="flash">闪动</span>
+									<span data-anim="pulse">循环缩放</span>
+									<span data-anim="rubberBand">弹动</span>
+									<span data-anim="shake">颤动</span>
+									<span data-anim="swing">摇晃</span>
+									<span data-anim="tada">颤抖</span>
+									<span data-anim="wobble">摇摆</span>
+									<span data-anim="zoomIn">放大</span>
+									<span data-anim="zoomInDown">向下放大</span>
+									<span data-anim="bigEntrance">弹性扩大</span>
+									<span data-anim="hatch">弹性向上</span>
+									<span data-anim="bounceIn">弹性放大</span>
+									<span data-anim="bounceInDown">向下弹性进入</span>
+									<span data-anim="bounceInLeft">向右弹性移入</span>
+									<span data-anim="bounceInRight">向左弹性进入</span>
+									<span data-anim="bounceInUp">向上弹性进入</span>
+									<span data-anim="fadeIn">淡入</span>
+									<span data-anim="slideExpandUp">向上放大</span>
+									<span data-anim="expandUp">放大</span>
+									<span data-anim="expandOpen">缩小</span>
+									<span data-anim="bigEntrance">向右晃动</span>
+									<span data-anim="hatch">向上晃动</span>
+			            			<span data-anim="bounce">弹跳</span>
+			            			<span data-anim="pulse">缩放</span>
+									<span data-anim="floating">浮动</span>
+			       				    <span data-anim="tossing">摇摆</span>
+			            			<span data-anim="pullUp">向上扩张</span>
+									<span data-anim="pullDown">向下扩张</span>
+			           				<span data-anim="stretchLeft">向左扩张</span>
+			          				<span data-anim="stretchRight">向右扩张</span>
+								</dd>
+							</dl>
+						</li>
+						<li><dl class="conf-anim-time">延时：<input class="delay num" type="text">s &nbsp;&nbsp;&nbsp;&nbsp; 持续时间：<input class="duration num" type="text">s</dl></li>
+
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- form是当前编辑对象时显示 -->
+		<section class="form-config"></section>
+	</aside>
+</div>
+<div class="preview-simulator-wrap">
+	<div class="preview-hide-btn">
+		<i></i>
+		<i></i>
+	</div>
+
+	<div class="preview-qrcode-box">
+		<span>扫描二维码在手机上预览</span>
+	</div>
+	<div class="preview-simulator">
+		<iframe name="preview" width="320" height="505" frameborder="0"></iframe>
+	</div>
+</div>
+<script src="/Public/js/jquery-2.1.1.min.js"></script>
+<script src="/Public/js/plugin/jquery.easing.min.js"></script>
+<script src="/Public/js/plugin/jquery.scrollbar-3.1.11.min.js"></script>
+<script src="/Public/js/plugin/jquery.sortable.min.js"></script>
+<script src="/Public/js/plugin/jquery.qrcode.min.js"></script>
+<script src="/Public/js/appmaker.lib-1.0.0.dev.js"></script>
+<script src="/Public/js/appmaker-1.0.0.dev.js"></script>
+
+<script>
+
+window.onload = function() {
+	
+	window.onbeforeunload = function(){
+		return '请确认保存编辑数据！';
+	}
+
+	var newMag = new Maker.CreateMag(Lib.request('appid'));
+		
+	newMag.initial();
+
+	var preview = new Maker.SavePreview();
+
+	preview.initialize();
+
+	$(".maker-pages-list").mCustomScrollbar({
+		theme : 'dark',
+		scrollInertia : 50
+	});
+
+	$(".app-basic-config").mCustomScrollbar({
+		theme : 'dark',
+		scrollInertia : 50
+	});
+}
+</script>
+</body>
+</html>
