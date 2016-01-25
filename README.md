@@ -1,2 +1,2 @@
 # liveapp
-a online editor for mobile device
+a online editor for css3 animation
